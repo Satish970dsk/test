@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<p>contact works!</p>
+<style>
+    .v{
+        border: 2px solid green;
+    }
+    .i{
+        border: 2px solid red;
+    }
+</style>
+<!-- greet and time  -->
+<!-- <h4>{{n}}</h4>
+<button (click)="func1()" class="btn btn-success">increment</button>
+<button (click)="func2()" class="btn btn-danger ms-3">increment</button>
+<br><br>
+<input type="text" name="" id="t1" class="form-control w-25">
+<div class="my-3"><h5>{{x}}</h5></div>
+<button (click)="func3()" class="btn btn-success">Greet</button> -->
+<div class="w-25 mx-auto">
+<form action="" [formGroup]="f">
+    <label for="" class="mb-2">Enter Username<span class="fs-5 text-danger">*</span></label>
+    <input type="text" name="" id="" formControlName="uname" class="form-control mb-2" [class.i]="f.controls.uname.errors?.required && f.controls.uname.touched" [class.i]="f.controls.uname.errors?.pattern" [class.v]="!f.controls.uname.errors?.required">
+    <div *ngIf="f.controls.uname.errors?.required && f.controls.uname.touched" class="text-danger">Please enter username</div>
+    <div *ngIf="f.controls.uname.errors?.pattern && f.controls.uname.touched" class="text-danger">Please enter only lowercase alphabets</div>
+    <label for="" class="mb-2">Enter Email<span class="fs-5 text-danger">*</span></label>
+    <input type="email" name="" id="" formControlName="em" class="form-control mb-2" [class.i]="f.controls.em.errors?.required && f.controls.em.touched" [class.i]="f.controls.em.errors?.email" [class.v]="!f.controls.em.errors?.email && f.controls.em.touched">
+    <div *ngIf="f.controls.em.errors?.required && f.controls.em.touched" class="text-danger">Please enter email</div>
+    <div *ngIf="f.controls.em.errors?.email && f.controls.em.touched" class="text-danger">Please enter correct email</div>
+    <label for="" class="mb-2">Enter Address<span class="fs-5 text-danger">*</span></label>
+    <input type="text" name="" formControlName="address" id="" class="form-control mb-2" [class.i]="f.controls.address.errors?.msg && f.controls.address.touched" [class.v]="!f.controls.address.errors?.msg">
+    <div *ngIf="f.controls.address.errors?.msg && f.controls.address.touched" class="text-danger">Address should be statrs with A</div>
+    <label for="" class="mb-2">Enter Message<span class="fs-5 text-danger">*</span></label>
+    <textarea name="" id="" class="form-control mb-2" formControlName="msg" [class.i]="f.controls.msg.errors?.required && f.controls.msg.touched" [class.i]="f.controls.msg.errors?.maxlength" [class.v]="!f.controls.msg.errors?.email && f.controls.msg.touched"></textarea>
+    <div *ngIf="f.controls.msg.errors?.required && f.controls.msg.touched" class="text-danger">Please write somthing</div>
+    <div *ngIf="f.controls.msg.errors?.maxlength" class="text-danger">Please write only 10 characetrs </div>
+    <input type="submit" value="send" class="btn btn-success my-3" >
+</form>
+</div>

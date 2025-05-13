@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<p>login works!</p>
+<style>
+    .v{
+        border: 2px solid green;
+    }
+    .i{
+        border: 2px solid red;
+    }
+</style>
+<div class="w-25 mx-auto">
+<form action=""  #f="ngForm" (ngSubmit)="validate(f.value)">
+    <!-- {{f.value| json}} -->
+    <label for="uname">Enter Username</label>
+    <input type="text" ngModel #u="ngModel" name="uname" id="" class="form-control" required pattern="[a-z]+" [class.v]="u.valid" [class.i]="u.invalid && u.touched"/>
+    <div *ngIf="u.errors?.['required'] && u.touched" class="text-danger">Enter Username</div>
+    <div *ngIf="u.errors?.['pattern'] && u.touched" class="text-danger">invalid pattern enter only alphabets</div>
+    <!-- <p><span>touched:</span>{{u.touched}} <span>untouched:</span>{{u.untouched}}</p>
+    errors:{{u.errors?.['required']}}
+    <p><span>dirty:</span>{{u.dirty}} <span>pristine:</span>{{u.pristine}}</p>
+    <p><span>valid:</span>{{u.valid}} <span>invalid:</span>{{u.invalid}}</p>
+    <br> -->
+    <!-- {{f.value | json}} -->
+    <label for="pwd">Enter Password</label>
+    <input type="password" ngModel #p="ngModel" name="pwd" id="" class="form-control" required pattern="[a-z0-9]+" [class.v]="p.valid" [class.i]="p.invalid && p.touched" />
+    <!-- <input type="password" name="" id="" pattern="(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"> -->
+    <div *ngIf="p.errors?.['required'] && p.touched" class="text-danger">Enter Password</div>
+    <div *ngIf="p.errors?.['pattern'] && p.touched" class="text-danger">invalid pattern enter only lowercase alphabets or numbers</div>
+    <button type="submit" class="btn btn-success my-3 w-100">Login</button>
+    <div class="text-danger">{{err}}</div>
+</form>
+</div>

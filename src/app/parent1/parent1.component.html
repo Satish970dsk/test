@@ -1,0 +1,18 @@
+<div class="container">
+    <p>parent1 works!</p>
+
+    <h4 >Data comining from child component: <span class="text-danger">{{data}}</span></h4>
+    <app-childpage1 (event1)="display($event)"> </app-childpage1>
+    <hr>
+</div>
+
+
+<div class="container form-input-group">
+    <input type="text" name="" id="in1" placeholder="Enter your name" class="form-control w-25 mb-3">
+    <input type="text" name="" id="in2" placeholder="Enter your address" class="form-control w-25">
+    <button type="button" class="btn btn-success my-2" (click)="sd()">Print Data</button>
+    <hr>
+<app-childpage1 [name]="x.name1" [addr]="x.addr">
+ 
+</app-childpage1>
+</div>

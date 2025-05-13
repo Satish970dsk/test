@@ -1,0 +1,42 @@
+<style>
+    .e{
+        background-color: black;
+        color: white;
+    }
+    .hide{
+      display: none;
+    }
+    .show{
+      display: block;
+    }
+</style>
+<app-navbar></app-navbar>
+<p>products works!</p>
+
+<div class="container">
+  <h2 class="text-center text-danger">Products</h2><hr>
+  <div class=" mb-4 mt-4" style="margin-left: 580px;">
+  <button class="btn btn-danger" (click)="task3('h')">hide</button>
+  <button class="btn btn-success ms-4" (click)="task3('s')">show</button>
+  <button class="btn btn-warning ms-4" (click)="hi()">show</button>
+</div>
+  <div class="row">
+   
+    <div class="col-md-4 mb-3" *ngFor="let item of prod;" >
+      <div class="card shadow">
+        <img [src]="item.pimage" alt="" class="card-img-top" height="300" [class.hide]="hide" [class.show]="show" />
+        <hr />
+        <div class="card-body">
+          <p class="card-text">product id: {{ item.pid }}</p>
+          <p class="card-text">product name: {{ item.pname }}</p>
+          <p class="card-text text-strike">product description: {{ item.description }}</p>
+          <p class="card-text">original price: {{item.price | currency:'INR'}} <br> discount price: {{ item.price | discount:10|currency:'INR' }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a routerLink="/buypage" [queryParams]="{a:item.pid,b:item.pname,c:item.description,d:item.price,e:item.pimage}" class="btn btn-success">Buy Now</a>
+            <a routerLink="/" class="btn btn-info" >Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

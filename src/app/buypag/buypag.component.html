@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<div class="row mt-3" style="width: 800px;height:200px;">
+    <div class="col-md-4 mb-3 mx-auto">
+      <div class="card shadow">
+        <img [src]="image" alt="" class="card-img-top"  />
+        <hr />
+        <div class="card-body">
+          <p class="card-text">product id: {{ pid }}</p>
+          <p class="card-text">product name: {{ pname }}</p>
+          <p class="card-text text-strike">product description: {{ des }}</p>
+          <p class="card-text">original price: {{price | currency:'INR'}} <br></p>
+        </div>
+        <div class="card-footer d-flex justify-content-around align-items-center">
+            <!-- <a routerLink="/buypage" [queryParams]="{a:item.pid,b:item.pname,c:item.description,d:item.price,e:item.pimage}" class="btn btn-success">Buy Now</a> -->
+             <span>Quantity:<input type="number" [(ngModel)]="q" min="1" name="" class="form-control w-50"></span>
+            <a routerLink="/" class="btn btn-info w-100 btn-sm" >Confirm Buy</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="" style="margin-left: 600px">
+    <p>item:{{pname}}</p>
+    <p>price:{{price}}</p>
+    <p>Quantity:{{q}}</p>
+    <p>total price:{{q*price}}</p>
+  </div>

@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<p>assignment works!</p>
+<div>
+    <p>Product name: {{product.name | uppercase}}</p>
+    <p>Product name: {{product.price | currency}}</p>
+    <p>Product name: {{product.releaseDate | date:'longDate'}}</p>
+</div>
+
+<p>Reverse of String: <span class="text-danger">{{ 'Angular' | reverse }}</span></p>
+<p>Conunt of Words in a String: <span class="text-danger">{{ 'Angular is awesome!' | wordcount }}</span></p> <!-- Output: 3 -->
+
+<p>{{ 'This is a long text that needs to be shortened' | truncate:20 }}</p>
+<!-- Output: This is a long text... -->
+<!-- 
+Filter an Array using a Custom Pipe( Create a pipe to filter a list of users by a search term)
+
+users = ['Alice', 'Bob', 'Charlie', 'David'];
+searchTerm = 'a';
+-->
+<!-- <input [(ngModel)]="searchTerm" placeholder="Search user" />
+<ul>
+  <li *ngFor="let user of users | filter:searchTerm">{{ user }}</li>
+</ul>  -->
+

@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+<p>rxdemo works!</p>
+<div>
+    {{fd}}
+</div>
+
+<button (click)="fromdemo()">From demo</button>
+<button (click)="intervaldemo()">Interval demo</button>
+<button id="clickbtn" (click)="fromeventdemo()">fromeventdemo</button>
+<button id="clickbtn" (click)="observabledemo()">observabledemo</button>
+<button id="clickbtn" (click)="displaystudents()">displaystudents</button>
+<br>
+{{error}}
+<div >
+    <h3>all students</h3>
+    <table class="table table-bordered table-stripped mt-4">
+
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>Marks</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of stuarray">
+                <td>{{i.id}}</td>
+                <td>{{i.studentname}}</td>
+                <td>{{i.totalmarks}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <input type="text" id="u">
+    <button (click)="display()">result</button>
+    
+</div>
+<div *ngIf="x">
+    <table class="table table-bordered table-stripped mt-4">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>Marks</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{std.id}}</td>
+                <td>{{std.studentname}}</td>
+                <td>{{std.totalmarks}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<input type="text" name="" id="" [(ngModel)]="id">
+<input type="text" name="" id="" [(ngModel)]="name">
+<input type="text" name="" id="" [(ngModel)]="marks">
+<button (click)="addnewstudents()">addnewstudents</button>
+
+
+<input type="text" name="" id="" [(ngModel)]="id1">
+<button (click)="deletestd(id1)">delete students</button>
+
+<br>
+<input type="text" name="" id="" placeholder="enter student id" [(ngModel)]="id2">
+<input type="text" name="" id="" placeholder="enter student name" [(ngModel)]="name1">
+<input type="text" name="" id="" placeholder="enter student marks" [(ngModel)]="marks1">
+<button (click)="updatestudents()">update students</button>

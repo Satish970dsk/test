@@ -1,0 +1,10 @@
+<p>child works!</p>
+<p>the content of child goes here</p>
+<h4>data from parent component:{{message}}</h4>
+
+<button type="button" class="btn btn-primary" (click)="executefunc()">click</button>
+<div>
+    <div>the content from parent is </div>
+    <ng-content></ng-content>
+</div>
+<button type="button" (click)="changecontent()">changecontent</button>
